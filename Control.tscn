@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Task Window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Tabs2.tscn" type="PackedScene" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.69684
+margin_top = -0.115845
+margin_right = -4.69684
+margin_bottom = -0.115845
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+window_scene = ExtResource( 1 )
+tab_scene = ExtResource( 5 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+drag_to_rearrange_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add" type="Button" parent="."]
+margin_left = 6.33675
+margin_top = 4.28063
+margin_right = 43.3367
+margin_bottom = 43.2806
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="add" to="." method="_on_add_pressed"]

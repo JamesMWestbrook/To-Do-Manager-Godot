@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Task.gd" type="Script" id=2]
+[ext_resource path="res://art/Check_mark_9x9.svg.png" type="Texture" id=3]
+[ext_resource path="res://art/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 02    [003704].mp3" type="AudioStream" id=4]
+[ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=5]
+
+[node name="Item" type="Control"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 0.297302
+margin_right = 510.297
+margin_bottom = 70.0
+rect_min_size = Vector2( 510, 70 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="LineEdit" parent="."]
+anchor_right = 0.632411
+margin_right = -36.5296
+margin_bottom = 46.0
+text = "Dev"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Complete" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 290.0
+margin_top = -1.70811
+margin_right = -170.0
+margin_bottom = -21.7081
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Complete"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.435294, 0.243137, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priority_label" type="Label" parent="."]
+margin_left = 343.752
+margin_top = -9.5226
+margin_right = 542.752
+margin_bottom = 60.4774
+text = "Priority: 3.00"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="-" type="Button" parent="priority_label"]
+margin_left = 173.904
+margin_top = 16.1074
+margin_right = 213.904
+margin_bottom = 58.1074
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="+" type="Button" parent="priority_label"]
+margin_left = 224.776
+margin_top = 16.2585
+margin_right = 264.776
+margin_bottom = 58.2585
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="del" type="Button" parent="priority_label"]
+margin_left = 272.859
+margin_top = 16.2585
+margin_right = 324.859
+margin_bottom = 58.2585
+text = "del"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -18.041
+script = ExtResource( 5 )
+
+[connection signal="button_down" from="Complete" to="." method="_on_Complete_button_down"]
+[connection signal="button_down" from="Complete" to="AudioStreamPlayer" method="_on_Complete_button_down"]
+[connection signal="pressed" from="priority_label/-" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="priority_label/+" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="priority_label/del" to="." method="_on_del_pressed"]

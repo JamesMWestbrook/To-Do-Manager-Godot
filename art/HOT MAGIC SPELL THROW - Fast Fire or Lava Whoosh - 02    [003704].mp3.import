@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 02    [003704].mp3-8e337ba3ca36c0b6d7df919c40dbf5fa.mp3str"
+
+[deps]
+
+source_file="res://art/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 02    [003704].mp3"
+dest_files=[ "res://.import/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 02    [003704].mp3-8e337ba3ca36c0b6d7df919c40dbf5fa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
